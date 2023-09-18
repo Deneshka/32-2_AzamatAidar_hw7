@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Detail</title>
+</head>
+<body>
+<h1>Название часов: {{watch_id_key.title}}</h1>
+<h2>Производитель: {{watch_id_key.director}}</h2>
+<p><b>Описание: {{watch_id_key.description}}</b></p>
+<h3>Изображение:</h3>
+<img src="{{watch_id_key.image.url}}" alt="image" width="250" height="250">
+<h3><i>Модель: {{watch_id_key.model}}</i></h3>
+<h4><b>Цена: {{watch_id_key.cost}}</b></h4>
+<h4>Обзор:</h4>
+ <iframe src="{{watch_id_key.review}}" frameborder="0"></iframe>
+</body>
+</html>

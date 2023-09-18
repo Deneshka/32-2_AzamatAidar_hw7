@@ -4,7 +4,7 @@ class Books_Library(models.Model):
     title = models.CharField(max_length=50)
     image = models.ImageField(upload_to='')
     description = models.TextField()
-    cost = models.IntegerField(max_length=12)
+    cost = models.IntegerField()
     author = models.CharField(max_length=50)
 
     def __str__(self):
