@@ -1,20 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Detail</title>
-</head>
-<body>
-<h1>Название часов: {{watch_id_key.title}}</h1>
-<h2>Производитель: {{watch_id_key.director}}</h2>
-<p><b>Описание: {{watch_id_key.description}}</b></p>
-<h3>Изображение:</h3>
-<img src="{{watch_id_key.image.url}}" alt="image" width="250" height="250">
-<h3><i>Модель: {{watch_id_key.model}}</i></h3>
-<h4><b>Цена: {{watch_id_key.cost}}</b></h4>
-<h4>Обзор:</h4>
-<iframe src="{{watch_id_key.review}}" frameborder="0"></iframe>
-<button><a href="/watch_detail/{{watch_id_key.id}}/delete/">Удалить</a></button>
-<button><a href="/watch_detail/{{watch_id_key.id}}/update/">Изменить</a></button>
+{% include 'watches/header.html' %}
+<center>
+<div class="card" style="width: 18rem;">
+  <img src="{{watch_id_key.image.url}}" class="card-img-top" alt="...">
+  <div class="card-body">
+       <h1>{{watch_id_key.title}}</h1>
+    <h2>{{watch_id_key.model}}</h2>
+    <p class="card-text">{{watch_id_key.director}}</p>
+      <p class="card-text">{{watch_id_key.description}}</p>
+      <p class="card-text">{{watch_id_key.cost}}</p>
+  </div>
+</div>
+    <iframe src="{{watch_id_key.review}}" frameborder="0" width="640" height="420"></iframe>
+    <br>
+    <button type="button" class="btn btn-danger"><a style="text-decoration: none href="/watch_detail/{{watch_id_key.id}}/delete/">Удалить</a></button>
+
 </body>
 </html>
+    <button type="button" class="btn btn-warning"><a style="text-decoration: none" href="/watch_detail/{{watch_id_key.id}}/update/">Изменить</a></button>
+    <br><br>
+</center>
+{% include 'watches/footer.html' %}
