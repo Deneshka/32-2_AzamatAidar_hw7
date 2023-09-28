@@ -1,4 +1,6 @@
 from django.db import models
+from django.urls import reverse
+
 
 class Shop(models.Model):
     MODEL = (
@@ -23,3 +25,22 @@ class Shop(models.Model):
         verbose_name = 'Часы'
         verbose_name_plural = 'Часы'
 
+class Comment(models.Model):
+     STARS = (
+         ('Оценка: 1', 'Оценка: 1'),
+         ('Оценка: 2', 'Оценка: 2'),
+         ('Оценка: 3', 'Оценка: 3'),
+         ('Оценка: 4', 'Оценка: 4'),
+         ('Оценка: 5', 'Оценка: 5')
+     )
+     review_object = models.CharField('Укажите название часов:', max_length=100)
+     review_created_at = models.DateTimeField(auto_now_add=True)
+     review_text = models.TextField('Отзыв:', blank=True, null=True)
+     review_start = models.CharField('Укажите свою оценку:', max_length=100, choices=STARS)
+
+     def __str__(self):
+         return self.review_start
+
+     class Meta:
+         verbose_name = 'Отзывы'
+         verbose_name_plural = 'Отзывы'
