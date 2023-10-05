@@ -1,6 +1,8 @@
 from django.urls import path
 from . import views
 
+app_name="users"
+
 urlpatterns = [
     path('', views.WatchShopView.as_view(), name='watches'),
     path('watch_detail/<int:id>/', views.WatchShopDetailView.as_view(), name='watch_detail'),
@@ -8,6 +10,8 @@ urlpatterns = [
     path('watch_detail/<int:id>/update/', views.UpdateWatchShopView.as_view(), name='update_watch'),
     path('create_watch/', views.AddTvShowView.as_view(), name='create_watch'),
     path('search/', views.Search.as_view(), name='search'),
-
+    path('registration/', views.RegistrationView.as_view(), name='registrations'),
+    path('login/', views.AuthLoginView.as_view(), name='login'),
+    path('users/', views.UserListView.as_view(), name='user_list')
 
 ]
